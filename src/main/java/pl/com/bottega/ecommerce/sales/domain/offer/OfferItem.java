@@ -65,7 +65,7 @@ public class OfferItem {
 
     @Override
     public int hashCode() {
-        return Objects.hash(quantity,product,discount); //TODO dodac pozostale klasy po utworzeniu ich
+        return Objects.hash(quantity,product,discount,money);
     }
 
     @Override
