@@ -19,4 +19,8 @@ public class Discount {
     public double getValue() {
         return value;
     }
+
+    public Money getMoney() {
+        return money;
+    }
 }
