@@ -30,9 +30,8 @@ public class OfferItem {
     private String currency;
 
     // discount
-    private String discountCause;
+    private Discount discount;
 
-    private BigDecimal discount;
 
     public OfferItem(String productId, BigDecimal productPrice, String productName, Date productSnapshotDate,
             String productType, int quantity) {
@@ -44,8 +43,7 @@ public class OfferItem {
         this.productPrice = productPrice;
         this.product = new Product(productId,productName,productSnapshotDate,productType,new Money(productPrice));
         this.quantity = quantity;
-        this.discount = discount;
-        this.discountCause = discountCause;
+        this.discount = new Discount(discountCause,discount,new Money(productPrice));
 
         BigDecimal discountValue = new BigDecimal(0);
         if (discount != null) {
@@ -54,6 +52,7 @@ public class OfferItem {
 
         this.totalCost = productPrice.multiply(new BigDecimal(quantity)).subtract(discountValue);
     }
+
 
     public Product getProduct() {
         return product;
@@ -71,12 +70,8 @@ public class OfferItem {
         return currency;
     }
 
-    public BigDecimal getDiscount() {
+    public Discount getDiscount() {
         return discount;
-    }
-
-    public String getDiscountCause() {
-        return discountCause;
     }
 
     public int getQuantity() {
@@ -85,7 +80,7 @@ public class OfferItem {
 
     @Override
     public int hashCode() {
-        return Objects.hash(quantity,product); //TODO dodac pozostale klast po utworzeniu ich
+        return Objects.hash(quantity,product,discount); //TODO dodac pozostale klasy po utworzeniu ich
     }
 
     @Override
