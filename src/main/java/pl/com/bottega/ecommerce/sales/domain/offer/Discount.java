@@ -4,10 +4,12 @@ public class Discount {
 
     private String Cause;
     private double value;
+    private Money money;
 
-    public Discount(String cause, double value) {
+    public Discount(String cause, double value, Money money) {
         Cause = cause;
         this.value = value;
+        this.money = money;
     }
 
     public String getCause() {

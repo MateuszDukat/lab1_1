@@ -7,12 +7,15 @@ public class Product {
     private String Name;
     private Date SnapshotDate;
     private String Type;
+    private Money money;
 
-    public Product(String id, String name, Date snapshotDate, String type) {
+
+    public Product(String id, String name, Date snapshotDate, String type, Money money) {
         this.id = id;
         Name = name;
         SnapshotDate = snapshotDate;
         Type = type;
+        this.money = money;
     }
 
     public String getId() {
