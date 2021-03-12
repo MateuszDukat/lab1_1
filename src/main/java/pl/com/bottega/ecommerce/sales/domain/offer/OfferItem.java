@@ -41,7 +41,7 @@ public class OfferItem {
 
         BigDecimal discountValue = new BigDecimal(0);
         if (discount != null) {
-            discountValue = discountValue.subtract(discount);
+            this.discount.setValue(discountValue.subtract(discount));
         }
 
     }

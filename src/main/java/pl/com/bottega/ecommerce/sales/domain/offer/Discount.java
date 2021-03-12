@@ -25,4 +25,8 @@ public class Discount {
     public Money getMoney() {
         return money;
     }
+
+    public void setValue(BigDecimal value) {
+        this.value = value;
+    }
 }
